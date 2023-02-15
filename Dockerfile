@@ -8,4 +8,5 @@ RUN apk --no-cache add ca-certificates tzdata
 RUN mkdir /app
 WORKDIR /app
 COPY --from=builder /src/service/rms-template .
+COPY --from=builder /src/service/configs/rms-template.json /etc/rms/
 CMD ["./rms-template"]
